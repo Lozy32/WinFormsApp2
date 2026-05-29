@@ -232,7 +232,7 @@
             btnCalculate.TabIndex = 8;
             btnCalculate.Text = "Рассчитать";
             btnCalculate.UseVisualStyleBackColor = true;
-            btnCalculate.Click += button1_Click;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // AppointmentsForm
             // 
@@ -246,7 +246,10 @@
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AppointmentsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Приемы";
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppointments).EndInit();
             groupBoxList.ResumeLayout(false);

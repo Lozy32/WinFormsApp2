@@ -303,9 +303,50 @@ namespace WinFormsApp2
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCalculate_Click(object sender, EventArgs e)
         {
+            // Простая проверка
+            if (cmbDoctor.SelectedItem == null)
+            {
+                MessageBox.Show("Сначала выберите врача!");
+                lblPrice.Text = "Стоимость: 0 руб.";
+                return;
+            }
 
+            try
+            {
+                int doctorId = (int)cmbDoctor.SelectedValue;
+
+                using var connection = DbConnectionFactory.Create();
+                connection.Open();
+                using var command = connection.CreateCommand();
+                command.CommandText = "SELECT BasePrice FROM Doctors WHERE Id = $id";
+                command.Parameters.AddWithValue("$id", doctorId);
+
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    decimal basePrice = Convert.ToDecimal(result);
+                    decimal finalPrice = basePrice;
+
+                    if (cmbVisitType.SelectedItem?.ToString() == "Повторный")
+                        finalPrice = basePrice * 0.8m;
+
+                    lblPrice.Text = $"Стоимость: {finalPrice:F2} руб.";
+                    MessageBox.Show($"Цена: {finalPrice} руб.");
+                }
+                else
+                {
+                    MessageBox.Show("Цена не найдена в базе данных!");
+                    lblPrice.Text = "Стоимость: 0 руб.";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}");
+                lblPrice.Text = "Стоимость: 0 руб.";
+            }
         }
     }
 }

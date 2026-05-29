@@ -59,7 +59,10 @@
             Controls.Add(btnLogin);
             Controls.Add(btnRegister);
             Controls.Add(lblTitle);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "StartForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Главная";
             ResumeLayout(false);
             PerformLayout();

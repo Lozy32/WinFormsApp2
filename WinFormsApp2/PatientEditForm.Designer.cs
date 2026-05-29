@@ -21,56 +21,97 @@
 
         private void InitializeComponent()
         {
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblBirthDate = new System.Windows.Forms.Label();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
-            this.lblFullName.Text = "ФИО:";
-            this.lblFullName.Location = new System.Drawing.Point(20, 25);
-
-            this.txtFullName.Location = new System.Drawing.Point(100, 22);
-            this.txtFullName.Size = new System.Drawing.Size(250, 23);
-
-            this.lblBirthDate.Text = "Дата рождения:";
-            this.lblBirthDate.Location = new System.Drawing.Point(20, 60);
-
-            this.txtBirthDate.Location = new System.Drawing.Point(130, 57);
-            this.txtBirthDate.Size = new System.Drawing.Size(150, 23);
-
-            this.lblPhone.Text = "Телефон:";
-            this.lblPhone.Location = new System.Drawing.Point(20, 95);
-
-            this.txtPhone.Location = new System.Drawing.Point(100, 92);
-            this.txtPhone.Size = new System.Drawing.Size(200, 23);
-
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.Location = new System.Drawing.Point(100, 140);
-            this.btnSave.Size = new System.Drawing.Size(100, 35);
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.Location = new System.Drawing.Point(220, 140);
-            this.btnCancel.Size = new System.Drawing.Size(100, 35);
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
-            this.Text = "Пациент";
-            this.ClientSize = new System.Drawing.Size(400, 210);
-            this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.lblBirthDate);
-            this.Controls.Add(this.txtBirthDate);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            lblFullName = new Label();
+            txtFullName = new TextBox();
+            lblBirthDate = new Label();
+            txtBirthDate = new TextBox();
+            lblPhone = new Label();
+            txtPhone = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
+            // 
+            // lblFullName
+            // 
+            lblFullName.Location = new Point(20, 25);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(100, 23);
+            lblFullName.TabIndex = 0;
+            lblFullName.Text = "ФИО:";
+            // 
+            // txtFullName
+            // 
+            txtFullName.Location = new Point(100, 22);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(250, 23);
+            txtFullName.TabIndex = 1;
+            // 
+            // lblBirthDate
+            // 
+            lblBirthDate.Location = new Point(20, 60);
+            lblBirthDate.Name = "lblBirthDate";
+            lblBirthDate.Size = new Size(100, 23);
+            lblBirthDate.TabIndex = 2;
+            lblBirthDate.Text = "Дата рождения:";
+            // 
+            // txtBirthDate
+            // 
+            txtBirthDate.Location = new Point(130, 57);
+            txtBirthDate.Name = "txtBirthDate";
+            txtBirthDate.Size = new Size(150, 23);
+            txtBirthDate.TabIndex = 3;
+            // 
+            // lblPhone
+            // 
+            lblPhone.Location = new Point(20, 95);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(100, 23);
+            lblPhone.TabIndex = 4;
+            lblPhone.Text = "Телефон:";
+            // 
+            // txtPhone
+            // 
+            txtPhone.Location = new Point(100, 92);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(200, 23);
+            txtPhone.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(100, 140);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(100, 35);
+            btnSave.TabIndex = 6;
+            btnSave.Text = "Сохранить";
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(220, 140);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 35);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "Отмена";
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // PatientEditForm
+            // 
+            ClientSize = new Size(400, 210);
+            Controls.Add(lblFullName);
+            Controls.Add(txtFullName);
+            Controls.Add(lblBirthDate);
+            Controls.Add(txtBirthDate);
+            Controls.Add(lblPhone);
+            Controls.Add(txtPhone);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "PatientEditForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Пациент";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

@@ -21,62 +21,101 @@
 
         private void InitializeComponent()
         {
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblSpecialization = new System.Windows.Forms.Label();
-            this.txtSpecialization = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.numPrice = new System.Windows.Forms.NumericUpDown();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).BeginInit();
-            this.SuspendLayout();
-
-            this.lblFullName.Text = "ФИО врача:";
-            this.lblFullName.Location = new System.Drawing.Point(20, 25);
-
-            this.txtFullName.Location = new System.Drawing.Point(130, 22);
-            this.txtFullName.Size = new System.Drawing.Size(250, 23);
-
-            this.lblSpecialization.Text = "Специализация:";
-            this.lblSpecialization.Location = new System.Drawing.Point(20, 60);
-
-            this.txtSpecialization.Location = new System.Drawing.Point(130, 57);
-            this.txtSpecialization.Size = new System.Drawing.Size(250, 23);
-
-            this.lblPrice.Text = "Базовая цена (руб.):";
-            this.lblPrice.Location = new System.Drawing.Point(20, 95);
-
-            this.numPrice.Location = new System.Drawing.Point(150, 92);
-            this.numPrice.Minimum = 0;
-            this.numPrice.Maximum = 10000;
-            this.numPrice.DecimalPlaces = 2;
-            this.numPrice.Size = new System.Drawing.Size(120, 23);
-
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.Location = new System.Drawing.Point(100, 140);
-            this.btnSave.Size = new System.Drawing.Size(100, 35);
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.Location = new System.Drawing.Point(220, 140);
-            this.btnCancel.Size = new System.Drawing.Size(100, 35);
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
-            this.Text = "Врач";
-            this.ClientSize = new System.Drawing.Size(420, 210);
-            this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.lblSpecialization);
-            this.Controls.Add(this.txtSpecialization);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.numPrice);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            lblFullName = new Label();
+            txtFullName = new TextBox();
+            lblSpecialization = new Label();
+            txtSpecialization = new TextBox();
+            lblPrice = new Label();
+            numPrice = new NumericUpDown();
+            btnSave = new Button();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
+            SuspendLayout();
+            // 
+            // lblFullName
+            // 
+            lblFullName.Location = new Point(20, 25);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(100, 23);
+            lblFullName.TabIndex = 0;
+            lblFullName.Text = "ФИО врача:";
+            // 
+            // txtFullName
+            // 
+            txtFullName.Location = new Point(130, 22);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(250, 23);
+            txtFullName.TabIndex = 1;
+            // 
+            // lblSpecialization
+            // 
+            lblSpecialization.Location = new Point(20, 60);
+            lblSpecialization.Name = "lblSpecialization";
+            lblSpecialization.Size = new Size(100, 23);
+            lblSpecialization.TabIndex = 2;
+            lblSpecialization.Text = "Специализация:";
+            // 
+            // txtSpecialization
+            // 
+            txtSpecialization.Location = new Point(130, 57);
+            txtSpecialization.Name = "txtSpecialization";
+            txtSpecialization.Size = new Size(250, 23);
+            txtSpecialization.TabIndex = 3;
+            // 
+            // lblPrice
+            // 
+            lblPrice.Location = new Point(20, 95);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(100, 23);
+            lblPrice.TabIndex = 4;
+            lblPrice.Text = "Базовая цена (руб.):";
+            // 
+            // numPrice
+            // 
+            numPrice.DecimalPlaces = 2;
+            numPrice.Location = new Point(150, 92);
+            numPrice.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numPrice.Name = "numPrice";
+            numPrice.Size = new Size(120, 23);
+            numPrice.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(100, 140);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(100, 35);
+            btnSave.TabIndex = 6;
+            btnSave.Text = "Сохранить";
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(220, 140);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 35);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "Отмена";
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // DoctorEditForm
+            // 
+            ClientSize = new Size(420, 210);
+            Controls.Add(lblFullName);
+            Controls.Add(txtFullName);
+            Controls.Add(lblSpecialization);
+            Controls.Add(txtSpecialization);
+            Controls.Add(lblPrice);
+            Controls.Add(numPrice);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "DoctorEditForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Врач";
+            ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

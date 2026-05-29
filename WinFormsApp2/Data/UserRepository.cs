@@ -44,6 +44,7 @@ namespace WinFormsApp2.Data
 
         public int CreateUser(string login, string password, string fullName, int roleId)
         {
+
             string salt = PasswordHasher.GenerateSalt();
             string hash = PasswordHasher.HashPassword(password, salt);
 

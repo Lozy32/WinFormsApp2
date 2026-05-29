@@ -262,7 +262,10 @@
             Controls.Add(btnDelete);
             Controls.Add(lblRole);
             Controls.Add(cmbRole);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "PatientsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Пациенты";
             ((System.ComponentModel.ISupportInitialize)dataGridViewPatients).EndInit();
             groupBoxList.ResumeLayout(false);

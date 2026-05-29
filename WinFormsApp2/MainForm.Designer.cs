@@ -31,6 +31,7 @@
             separator = new ToolStripSeparator();
             logoutMenuItem = new ToolStripMenuItem();
             lblWelcome = new Label();
+            label1 = new Label();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,21 +102,38 @@
             lblWelcome.TabIndex = 1;
             lblWelcome.Text = "Добро пожаловать!";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label1.Location = new Point(0, 98);
+            label1.Name = "label1";
+            label1.Size = new Size(186, 128);
+            label1.TabIndex = 2;
+            label1.Text = "🏥";
+            label1.Click += label1_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(label1);
             Controls.Add(lblWelcome);
             Controls.Add(menuStrip);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Медицинская клиника";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Label label1;
     }
 }

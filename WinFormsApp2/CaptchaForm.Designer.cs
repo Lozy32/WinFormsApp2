@@ -93,7 +93,10 @@
             Controls.Add(btnVerify);
             Controls.Add(txtCaptchaInput);
             Controls.Add(lblCaptchaCode);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "CaptchaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Подтверждение";
             Load += CaptchaForm_Load;
             ResumeLayout(false);

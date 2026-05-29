@@ -89,7 +89,10 @@
             Controls.Add(txtLogin);
             Controls.Add(lblPassword);
             Controls.Add(lblLogin);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Авторизация";
             ResumeLayout(false);
             PerformLayout();
